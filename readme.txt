@@ -1,5 +1,5 @@
 Akobir => homePage
 Feruz => blog + sermon-event
-Xusan => contacts
-Hosilbek => blog-posts
-Islombek => about-us + sermons
+Xusan => about-us
+Hosilbek => blog + contact
+Islombek => blogPost
