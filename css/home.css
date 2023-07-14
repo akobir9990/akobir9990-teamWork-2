@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "RobootC-300";
+  src: url(../../fonts/RobotoCondensed-Light.ttf);
+}
+@font-face {
+  font-family: "RobootC-400";
+  src: url(../../fonts/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+  font-family: "RobootC-700";
+  src: url(../../fonts/RobotoCondensed-Bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container, .container-md, .container-sm {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.container-md {
+  max-width: 1064px;
+}
+
+.container-sm {
+  max-width: 808px;
+}
+
+.upcoming-sermon__left button {
+  padding: 24px 64px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  background-color: #161722;
+  color: #ffd2a4;
+  text-transform: uppercase;
+  transition: 0.5s;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+}
+.upcoming-sermon__left button:hover {
+  color: #fff;
+}
+
+.section-header {
+  text-align: center;
+}
+.section-header h6 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 64px;
+  text-transform: uppercase;
+  letter-spacing: -0.48px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background: #000;
+}
+.header .header__container {
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__container .header__logo {
+  height: 100%;
+  padding-right: 66px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2000000015);
+}
+.header .header__container .nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.header .header__container .nav .nav__list {
+  display: flex;
+  gap: 48px;
+  margin-left: 66px;
+}
+.header .header__container .nav .nav__list .nav__item .nav__link {
+  color: #fff;
+  text-align: right;
+  /* Label 02 */
+  font-family: "RobootC-400";
+  font-size: 16px;
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.header .header__container .nav .header__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 48px;
+  border-radius: 12px;
+  background: var(--primary, #ffd2a4);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+}

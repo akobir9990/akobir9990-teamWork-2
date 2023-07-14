@@ -1,0 +1,75 @@
+@use "../global";
+@use "../components/upcoming-sermon";
+@use "../components/blog-card";
+@use "../components/section-header";
+@use "../utils/functions" as func;
+@use "../utils/placeholders";
+@use "../layout/container";
+@use "../base/typography";
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background: #000;
+  .header__container {
+    height: 80px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__logo {
+      height: 100%;
+      padding-right: 66px;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.20000000149011612);
+    }
+    .nav {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+
+      .nav__list {
+        display: flex;
+        gap: 48px;
+        margin-left: 66px;
+        .nav__item {
+          .nav__link {
+            color: #fff;
+            text-align: right;
+
+            /* Label 02 */
+            font-family: "RobootC-400";
+            font-size: 16px;
+            font-style: normal;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+        }
+      }
+      .header__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 48px;
+        border-radius: 12px;
+        backdrop-filter: blur(40px);
+        background: $c1;
+
+        color: #1c1d28;
+        text-align: center;
+        font-family: "Roboto-400";
+        font-size: 16px;
+        font-style: normal;
+        line-height: 16px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
