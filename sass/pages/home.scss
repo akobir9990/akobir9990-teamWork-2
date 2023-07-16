@@ -6,7 +6,16 @@
 @use "../utils/placeholders";
 @use "../layout/container";
 @use "../base/typography";
+.container {
+  // max-width => 1400-115-115= 1170
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 50px 0;
 
+  @media (max-width: 1000px) {
+    padding: 10px;
+  }
+}
 .header {
   position: fixed;
   width: 100%;
@@ -30,6 +39,7 @@
     }
     .nav {
       display: flex;
+        flex-direction: column;
       height: 100%;
       align-items: center;
       justify-content: space-between;
@@ -60,7 +70,7 @@
         padding: 20px 48px;
         border-radius: 12px;
         backdrop-filter: blur(40px);
-        background: $c1;
+        background: #ffd2a4;
 
         color: #1c1d28;
         text-align: center;
