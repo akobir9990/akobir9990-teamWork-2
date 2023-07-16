@@ -6,7 +6,10 @@
 @use "../utils/placeholders";
 @use "../layout/container";
 @use "../base/typography";
+@use "../utils/variables" as var;
+@use "../utils/mixins" as mxn;
 
+// <= header =>
 .header {
   position: fixed;
   width: 100%;
@@ -16,7 +19,6 @@
   .header__container {
     height: 80px;
     flex-shrink: 0;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,9 +45,7 @@
           .nav__link {
             color: #fff;
             text-align: right;
-
-            /* Label 02 */
-            font-family: "RobootC-400";
+            font-family: "RobotoC-400";
             font-size: 16px;
             font-style: normal;
             line-height: normal;
@@ -53,22 +53,317 @@
           }
         }
       }
-      .header__btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 48px;
-        border-radius: 12px;
-        backdrop-filter: blur(40px);
-        background: $c1;
+      .nav__btn {
+        @include mxn.nav-btn;
+      }
+    }
 
-        color: #1c1d28;
-        text-align: center;
+    #navbar-responsive {
+      position: fixed;
+      top: -100%;
+      bottom: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: green;
+      transition: 0.5s;
+    }
+    #navbar-open {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        display: none;
+      }
+      #navbar-open {
+        display: block;
+      }
+      #navbar-responsive {
+        position: fixed;
+
+        #navbar-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: transparent;
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+// <= become =>
+.become {
+  position: relative;
+  background-image: url(../../images/become.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .become__container {
+    padding: 128px 0;
+    .sup__title {
+      font-family: "RobotoC-700";
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: rgba(255, 255, 255, 1);
+    }
+    .title {
+      width: 592px;
+      @include mxn.title-h1;
+      color: rgba(255, 255, 255, 1);
+      margin-top: 16px;
+      margin-bottom: 32px;
+    }
+    .under__content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .top__line {
+        width: 18px;
+        height: 18px;
+        border-top: 2px solid var.$c2;
+      }
+      span {
+        width: 308px;
         font-family: "Roboto-400";
         font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    .nav__btn {
+      @include mxn.nav-btn;
+      margin-bottom: 64px;
+    }
+  }
+}
+
+// <= relevant =>
+
+.relevant {
+  .relevant__container {
+    padding: 128px 0;
+    .relevant__suptitle {
+    }
+    .relevant__title {
+    }
+    .relevant__items {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      @media (max-width: 1290px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .relevant__item {
+        background: var.$c3;
+        max-width: 411px;
+        height: 380px;
+        border-bottom: 5px solid var.$c2;
+        .item__icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background: var.$c2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        h4 {
+          @include mxn.item-h4;
+        }
+        p {
+          @include mxn.item-p;
+        }
+      }
+    }
+  }
+}
+
+// <= footer =>
+
+.footer {
+  position: relative;
+  padding: 64px 0;
+  background: var.$bg-black;
+  .footer__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .footer__text {
+      flex: 5;
+      display: flex;
+      justify-content: space-between;
+
+      .text__info {
+        span {
+          & p {
+            position: relative;
+
+            font-family: "RobotoC-400";
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+          }
+          & p:nth-child(1) {
+            margin-top: 31px;
+            margin-bottom: 32px;
+          }
+          & p:nth-child(3) {
+            margin: 16px 0;
+          }
+        }
+      }
+      .footer__main {
+        display: flex;
+
+        .text__quick-links {
+          p {
+            font-family: "RobotoC-400";
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: right;
+            color: rgba(255, 255, 255, 1);
+            margin-bottom: 20px;
+          }
+          ul {
+            li {
+              a {
+                margin-bottom: 24px;
+                font-family: "RobotoC-400";
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: rgba(255, 255, 255, 1);
+              }
+            }
+          }
+        }
+        .text__socials {
+          margin-left: 72px;
+          p {
+            //styleName: Paragraph;
+            font-family: "RobotoC-400";
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+            margin-bottom: 20px;
+          }
+          ul {
+            display: flex;
+            gap: 20px;
+            li {
+              a {
+              }
+            }
+          }
+        }
+
+        @media (max-width: 480px) {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: start;
+        .text__info {
+        }
+        .footer__main {
+          .text__quick-links {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+          }
+          .text__socials {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .footer__subscribe {
+      flex: 4;
+      margin-left: 115px;
+
+      .footer__title {
+        width: 377px;
+        font-family: "RobotoC-700";
+        font-size: 32px;
         font-style: normal;
-        line-height: 16px;
+        line-height: 44px;
+        letter-spacing: -0.32px;
         text-transform: uppercase;
+        color: white;
+        margin-bottom: 37px;
+      }
+    }
+    .footer__btn {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 512px;
+      height: 64px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      overflow: hidden;
+
+      input {
+        background: transparent;
+        padding: 20px;
+        color: #fff;
+      }
+      .nav__btn {
+        @include mxn.nav-btn;
+      }
+    }
+
+    @media (max-width: 1140px) {
+      .footer__text {
+        display: flex;
+        margin-top: 20px;
+        .text__info {
+          flex: 3;
+          margin-top: 20px;
+        }
+        .footer__main {
+          flex: 4;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+      }
+      flex-direction: column-reverse;
+      .footer__text {
+        flex: 1;
+      }
+      .footer__subscribe {
+        padding-top: 50px;
+        flex: 1;
+        margin: 0;
+        .footer__title {
+          width: 100%;
+        }
+        .footer__btn {
+          width: 100%;
+        }
       }
     }
   }
