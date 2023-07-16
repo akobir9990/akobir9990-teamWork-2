@@ -2,7 +2,22 @@
 @use "../components/_section-header.scss";
 
 
-.love{
+.love-text{
+  margin-top: 100px;
  
+  &__img-cart{
+    margin-top: 50px;
+     border: 1px solid red;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      text-align: center;
+      border: 1px solid red;
+    }
+
+  }
 }
 

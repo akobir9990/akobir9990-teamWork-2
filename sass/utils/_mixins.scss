@@ -52,3 +52,7 @@
 @mixin title-h6 {
   @include title(var.$h6, 400, normal);
 }
+
+@mixin title-p{
+  @include title(var.$p,400, normal)
+}
