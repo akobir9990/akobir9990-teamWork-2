@@ -1,5 +1,6 @@
 @use "../global";
-@use "../components/_section-header.scss";
+@use "../components/section-header";
+@use "../base/typography";
 
 
 .love-text{
@@ -21,3 +22,7 @@
   }
 }
 
+
+.nav__link {
+  font-size: 40px;
+}

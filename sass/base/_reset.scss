@@ -21,7 +21,13 @@ button {
 input:focus {
   outline: none;
 }
+input {
+  border: none;
+}
 
 a {
   text-decoration: none;
+}
+main {
+  margin-top: 80px;
 }
