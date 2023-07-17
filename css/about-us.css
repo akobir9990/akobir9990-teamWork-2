@@ -85,6 +85,23 @@ main {
   letter-spacing: -0.48px;
 }
 
+.love-text {
+  margin-top: 100px;
+}
+.love-text__img-cart {
+  margin-top: 50px;
+  border: 1px solid red;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+}
+.love-text__img-cart img {
+  text-align: center;
+  border: 1px solid red;
+}
+
 .nav__link {
   font-size: 40px;
 }

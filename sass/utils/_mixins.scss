@@ -77,3 +77,7 @@
   text-align: left;
   color: rgba(22, 23, 34, 1);
 }
+
+@mixin title-p{
+  @include title(var.$p,400, normal)
+}
