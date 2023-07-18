@@ -200,6 +200,9 @@ body {
   line-height: 24px;
 }
 .container-sm__third-content ol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   list-style-type: disc;
   padding-left: 19px;
   padding-top: 32px;

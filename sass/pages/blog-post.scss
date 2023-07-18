@@ -137,6 +137,9 @@ body {
       line-height: 24px;
     }
     ol {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       list-style-type: disc;
       padding-left: 19px;
       padding-top: 32px;
@@ -154,8 +157,8 @@ body {
     width: 100%;
     padding-top: 64px;
     padding-bottom: 64px;
-    @media(max-width: 800px) {
-        width: 100%;
+    @media (max-width: 800px) {
+      width: 100%;
     }
   }
 }
